@@ -2,6 +2,7 @@ import React from "react";
 import ProjectCard from "./ProjectCard"; // Make sure to adjust the path if necessary
 import ChatAppImg from "../assets/images.jpeg";
 import TodoImg from "../assets/my-actions-view-1.gif";
+import portfoiloImg from "../assets/protfoilo.jpg";
 
 const projects = [
   {
@@ -25,7 +26,7 @@ const projects = [
     title: "My Portfolio",
     description:
       "A frontend portfolio website highlights a developer’s skills and projects with a professional, responsive design. It includes a homepage introduction, an About page with skills and experience, a Projects page with detailed work descriptions, and a Contact page with a form and social links. Optional features can enhance the site",
-    image: "portfoiloImg",
+    image: portfoiloImg,
     link: "https://github.com/example/project3",
   },
   {
