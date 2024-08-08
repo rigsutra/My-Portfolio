@@ -1,4 +1,4 @@
-![Header Image](assets/protfoilo.jpg)
+![Header Image](src/assets/protfoiloImg.png)
 
 # Portfolio Website
 
