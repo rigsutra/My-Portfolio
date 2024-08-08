@@ -29,13 +29,6 @@ const projects = [
     image: portfoiloImg,
     link: "https://github.com/example/project3",
   },
-  {
-    id: 4,
-    title: "Project 5",
-    description: "Description of Project 4.",
-    image: "path/to/image4.jpg",
-    link: "https://github.com/example/project4",
-  },
 
   // Add more projects as needed
 ];
