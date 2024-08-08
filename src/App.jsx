@@ -1,6 +1,6 @@
 // App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <div className="flex flex-col">
         <Header />
         <main>
@@ -33,7 +33,7 @@ const App = () => {
         </main>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 
