@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 px-4">
+    <footer className="bg-black text-white py-20 px-4">
       <div className="container mx-auto flex flex-col items-center justify-between md:flex-row md:justify-around">
         <div className="text-center md:text-left">
           <p className="text-lg font-medium mb-2">ASHISH SINGH</p>
