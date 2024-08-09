@@ -1,15 +1,33 @@
 // Contact.js
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log("Form submitted:", { name, email, message });
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7cg685g",
+        "template_my6oa77",
+        e.target,
+        "5J-sMlQ0MCQ1pw5Lo"
+      )
+      .then(
+        (result) => {
+          setStatus("Message sent successfully!");
+          e.target.reset();
+        },
+        (error) => {
+          setStatus("Error sending message.");
+        }
+      );
   };
 
   return (
@@ -27,7 +45,7 @@ const Contact = () => {
         </p>
       </div>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={sendEmail}
         className="w-full md:w-[60%] mt-8 mx-auto p-6 rounded-lg shadow-2xl mb-20"
       >
         <div className="mb-8">
@@ -86,6 +104,7 @@ const Contact = () => {
             CONTACT
           </motion.button>
         </div>
+        {status && <p>{status}</p>}
       </form>
     </section>
   );
