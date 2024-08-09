@@ -2,8 +2,8 @@ import React from "react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="py-20">
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 py-5">
+    <div className="py-5 md:py-20">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 md:py-5">
         <img
           src={project.image}
           alt={project.title}

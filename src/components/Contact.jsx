@@ -28,7 +28,7 @@ const Contact = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="w-[60%] mt-8 mx-auto p-6 rounded-lg shadow-2xl mb-20"
+        className="w-full md:w-[60%] mt-8 mx-auto p-6 rounded-lg shadow-2xl mb-20"
       >
         <div className="mb-8">
           <label

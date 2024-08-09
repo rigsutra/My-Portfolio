@@ -52,7 +52,7 @@ const Projects = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full md:w-[80%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-6  w-full md:w-[80%]  ">
             {sortedProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
