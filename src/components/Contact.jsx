@@ -1,31 +1,29 @@
 // Contact.js
 import { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_7cg685g",
-        "template_my6oa77",
-        e.target,
-        "5J-sMlQ0MCQ1pw5Lo"
-      )
+      .sendForm("service_7cg685g", "template_my6oa77", form.current, {
+        publicKey: "5J-sMlQ0MCQ1pw5Lo",
+      })
       .then(
-        (result) => {
-          setStatus("Message sent successfully!");
-          e.target.reset();
+        () => {
+          console.log("SUCCESS!");
         },
         (error) => {
-          setStatus("Error sending message.");
+          console.log("FAILED...", error.text);
         }
       );
   };
@@ -45,6 +43,7 @@ const Contact = () => {
         </p>
       </div>
       <form
+        ref={form}
         onSubmit={sendEmail}
         className="w-full md:w-[60%] mt-8 mx-auto p-6 rounded-lg shadow-2xl mb-20"
       >
@@ -58,6 +57,7 @@ const Contact = () => {
           <input
             type="text"
             id="name"
+            name="user_name"
             className="shadow appearance-none border rounded w-full h-[55px] py-2 px-3 bg-[#f0f0f0] text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={name}
             onChange={(event) => setName(event.target.value)}
@@ -74,6 +74,7 @@ const Contact = () => {
           <input
             type="email"
             id="email"
+            name="user_email"
             className="shadow appearance-none border rounded w-full h-[55px] py-2 px-3 bg-[#f0f0f0] text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={email}
             placeholder="Enter Your Email"
@@ -89,6 +90,7 @@ const Contact = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             className="shadow appearance-none border rounded w-full h-[250px] py-4 px-4 text-gray-700 bg-[#f0f0f0] leading-tight focus:outline-none focus:shadow-outline"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
@@ -104,7 +106,6 @@ const Contact = () => {
             CONTACT
           </motion.button>
         </div>
-        {status && <p>{status}</p>}
       </form>
     </section>
   );
