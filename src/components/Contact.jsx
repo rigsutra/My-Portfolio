@@ -3,6 +3,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -26,6 +28,9 @@ const Contact = () => {
           console.log("FAILED...", error.text);
         }
       );
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -102,6 +107,14 @@ const Contact = () => {
             className="bg-purple-700 text-white font-bold py-4 px-10 rounded ml-4"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={toast.success("message send successfully", {
+              position: toast.POSITION.TOP_RIGHT,
+              autoClose: 3000, // The toast will automatically close after 5 seconds
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            })}
           >
             CONTACT
           </motion.button>
