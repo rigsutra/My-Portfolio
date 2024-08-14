@@ -108,7 +108,6 @@ const Contact = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toast.success("message send successfully", {
-              position: toast.POSITION.TOP_RIGHT,
               autoClose: 3000, // The toast will automatically close after 5 seconds
               hideProgressBar: false,
               closeOnClick: true,
