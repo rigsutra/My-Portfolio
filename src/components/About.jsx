@@ -7,15 +7,11 @@ const About = () => {
     "HTML",
     "CSS",
     "JavaScript",
-    "React",
-    "Wordpress",
     "PHP",
-    "SASS",
+    "MongoDB",
     "GIT",
     "Github",
     "Responsive Design",
-    "SEO",
-    "Terminal",
   ];
 
   return (
