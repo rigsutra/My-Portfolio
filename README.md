@@ -1,16 +1,16 @@
 # Portfolio — Ashish Singh
 
-Personal portfolio site: about, skills, projects and a contact form.
+Personal portfolio site: experience, projects, skills and contact.
 
 Live: https://rigsutra.github.io/My-Portfolio/
 
 ## Stack
 
-A single `index.html` with inline CSS and vanilla JavaScript. No framework and no build step.
+A single `index.html` with inline CSS and vanilla JavaScript. No framework and no build step. The 3D hero uses [three.js](https://threejs.org/) r128 from cdnjs.
 
-- Light and dark theme (follows the system setting, with a toggle that is remembered)
-- Responsive layout with a mobile menu
-- Contact form sent through [EmailJS](https://www.emailjs.com/)
+- Dark theme by default, with a light theme toggle that is remembered
+- Responsive layout for desktop and mobile
+- Sections fade in on scroll; motion is off for users who prefer reduced motion
 
 ## Run locally
 
